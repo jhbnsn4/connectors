@@ -1,0 +1,30 @@
+<!--Main container-->
+<mat-sidenav-container class="sidenav-container">
+
+    <!--Menu on the side-->
+    <mat-sidenav #drawer mode="side" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <div>
+            <mat-nav-list>
+                <a mat-list-item color="warn" (click)="drawer.toggle()">Register</a>
+            </mat-nav-list>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <!--Tool bar with options-->
+        <mat-toolbar color="primary" class="toolbar">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon md-48 aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon md-48 aria-label="Side nav toggle icon">home</mat-icon>
+            </button>
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon md-48 aria-label="Side nav toggle icon">search</mat-icon>
+            </button>
+        </mat-toolbar>
+        <!--Main content of the view... <router-outlet> -->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
