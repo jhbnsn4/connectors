@@ -38,6 +38,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 
+//Flex Layout
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 //custom components
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FeatureComponent } from './component/feature/feature.component';
@@ -49,6 +52,7 @@ import { BenefitComponent } from './component/benefit/benefit.component';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddRoutingModule } from './add-routing.module';
+import { ProductListComponent } from './component/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,8 @@ import { AddRoutingModule } from './add-routing.module';
     ProductComponent,
     ReviewComponent,
     UseCaseComponent,
-    BenefitComponent
+    BenefitComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,    
@@ -101,6 +106,7 @@ import { AddRoutingModule } from './add-routing.module';
     FormsModule,
     ReactiveFormsModule,
     AddRoutingModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
