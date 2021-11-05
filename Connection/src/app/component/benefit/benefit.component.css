@@ -19,6 +19,7 @@ img {
 
 .description {
     flex: 5;
+    font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .toRight {
@@ -27,4 +28,8 @@ img {
 
 .toLeft {
     flex-direction: row-reverse;
+}
+
+h1 {
+    font-family: 'Crete Round', serif;
 }

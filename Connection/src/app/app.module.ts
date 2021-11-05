@@ -58,6 +58,7 @@ import { ProductListComponent } from './component/product-list/product-list.comp
 import { ReviewDetailComponent } from './component/review-detail/review-detail.component';
 import { LoginComponent } from './component/login/login.component';
 import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { ReviewFeedComponent } from './component/review/review-feed/review-feed.
     ReviewDetailComponent,
     LoginComponent,
     ReviewFeedComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,    
