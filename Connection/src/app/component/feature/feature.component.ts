@@ -10,19 +10,21 @@ export class FeatureComponent implements OnInit {
   features = [
     {
       "featureId": "1",
-      "featureDescription" : "Provides insight when no record is available (\"no hit\") for a consumer on The Work Number database"
+      "featureDescription" : "Matches credit card or bank account information with a consumer’s verified PII in real-time which may result in higher conversion rates to purchase goods and services"
     },
     {
       "featureId": "2",
-      "featureDescription" : "Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Feugiat in ante metus dictum at tempor commodo ullamcorper."
+      "featureDescription" : "Validates the authenticity of payment details by cross-referencing the credit card or bank account entered by the consumer."
     },
     {
       "featureId": "3",
-      "featureDescription" : "Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Dui id ornare arcu odio ut. "
+      "featureDescription" : "Offers real-time match of the consumer identity and credit card or bank account provided by the consumer."
     },
   ]
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }

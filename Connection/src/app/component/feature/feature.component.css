@@ -7,21 +7,19 @@
 
 .flex {
     display: flex;
-    align-items: center;
 }
 
 p {
     flex: 5;
-}
-
-span {
-    align-self: center;
-    justify-self: center;
-    background-color: rgb(100, 160, 120);
+    font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .icon {
     flex: 1;
     align-items: center;
-    background-color: rgb(71, 106, 136);
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Crete Round', serif;
 }
