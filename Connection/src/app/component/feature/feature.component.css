@@ -1,0 +1,27 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin: 5px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    flex: 5;
+}
+
+span {
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(100, 160, 120);
+}
+
+.icon {
+    flex: 1;
+    align-items: center;
+    background-color: rgb(71, 106, 136);
+}

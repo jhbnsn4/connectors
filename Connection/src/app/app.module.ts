@@ -55,6 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ProductListComponent } from './component/product-list/product-list.component';
+import { ReviewDetailComponent } from './component/review-detail/review-detail.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ProductListComponent } from './component/product-list/product-list.comp
     ReviewComponent,
     UseCaseComponent,
     BenefitComponent,
-    ProductListComponent
+    ProductListComponent,
+    ReviewDetailComponent
   ],
   imports: [
     BrowserModule,    
