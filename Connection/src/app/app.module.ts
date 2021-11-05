@@ -56,6 +56,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ProductListComponent } from './component/product-list/product-list.component';
 import { ReviewDetailComponent } from './component/review-detail/review-detail.component';
+import { LoginComponent } from './component/login/login.component';
+import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { ReviewDetailComponent } from './component/review-detail/review-detail.c
     UseCaseComponent,
     BenefitComponent,
     ProductListComponent,
-    ReviewDetailComponent
+    ReviewDetailComponent,
+    LoginComponent,
+    ReviewFeedComponent,
   ],
   imports: [
     BrowserModule,    

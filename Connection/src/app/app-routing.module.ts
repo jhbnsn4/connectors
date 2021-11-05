@@ -5,12 +5,16 @@ import { ProductComponent } from './component/product/product.component';
 import { ProductListComponent } from './component/product-list/product-list.component';
 import { BenefitComponent } from './component/benefit/benefit.component';
 import { FeatureComponent } from './component/feature/feature.component';
+import { LoginComponent } from './component/login/login.component';
+import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
   { path: 'product', component: ProductComponent },
   { path: 'benefit', component: BenefitComponent },
   { path: 'feature', component: FeatureComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'reviews', component: ReviewFeedComponent},
 ];
 
 @NgModule({

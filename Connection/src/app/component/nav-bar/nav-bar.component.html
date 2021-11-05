@@ -23,6 +23,14 @@
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
                 <mat-icon md-48 aria-label="Side nav toggle icon">search</mat-icon>
             </button>
+
+            <a routerLink="/login" *ngIf="!userService.checkLoggedIn()">Login</a>
+            <div *ngIf="userService.checkLoggedIn()">
+                <button mat-button [matMenuTriggerFor]="menu">Hello, {{userService.getUserFirstName()}}</button>
+                <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="userService.logoutUser()">Logout</button>
+                </mat-menu>
+            </div>
         </mat-toolbar>
         <!--Main content of the view... <router-outlet> -->
         <ng-content></ng-content>
