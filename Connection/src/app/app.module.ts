@@ -51,7 +51,9 @@ import { BenefitComponent } from './component/benefit/benefit.component';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddRoutingModule } from './add-routing.module';
+
+import { AppRoutingModule } from './app-routing.module';
+
 import { ProductListComponent } from './component/product-list/product-list.component';
 
 @NgModule({
@@ -105,7 +107,7 @@ import { ProductListComponent } from './component/product-list/product-list.comp
     MatTreeModule,
     FormsModule,
     ReactiveFormsModule,
-    AddRoutingModule,
+    AppRoutingModule,
     FlexLayoutModule,
   ],
   providers: [],

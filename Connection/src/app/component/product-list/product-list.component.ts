@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
     
     products = [
     { id: 11, name: 'Account Verification' },
@@ -16,9 +17,10 @@ export class ProductListComponent implements OnInit {
     { id: 16, name: 'Consumer Credit Report' },
     { id: 17, name: 'Consumer Engagement Suite' },
     { id: 18, name: 'Digital Identity Trust' },
-    { id: 19, name: 'Document Verification' },
+    { id: 19, name: 'Document Verification' },    
     { id: 20, name: 'FraudIQ® Identity Scan Alert' }
   ];
+
   constructor() { }
 
   ngOnInit(): void {
