@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -18,7 +19,7 @@ export class NavBarComponent implements OnInit {
     shareReplay()
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver, public userService: UserService) { }
 
   ngOnInit(): void {
   }

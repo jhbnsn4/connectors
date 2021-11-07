@@ -56,6 +56,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ProductListComponent } from './component/product-list/product-list.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { ReviewDetailComponent } from './component/review-detail/review-detail.component';
+import { LoginComponent } from './component/login/login.component';
+import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { OverlayModule } from '@angular/cdk/overlay';
     ReviewComponent,
     UseCaseComponent,
     BenefitComponent,
-    ProductListComponent
+    ProductListComponent,
+    ReviewDetailComponent,
+    LoginComponent,
+    ReviewFeedComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,    
