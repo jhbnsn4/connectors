@@ -1,11 +1,77 @@
-.sidenav-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+mat-toolbar {
+    background: #e4e4e4;
+    color: white;
+    height: 50px;
 }
 
-.toolbar {
-    background-color: rgb(71, 97, 184);
+img {
+    width: 100px;
+    object-fit: contain;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 220px;
+    border-right: none;
+    background: #684b4f;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.content {
+    margin-left: 32px;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 40px);
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+.menu-button mat-icon {
+    margin-right: 8px;
+}
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+span {
+    font-family: 'Crete Round', serif;
+}
+
+h4 {
+    font-family: 'Crete Round', serif;
+}
+
+p {
+    font-family: 'Crete Round', serif;
 }

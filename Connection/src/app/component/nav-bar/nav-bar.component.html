@@ -1,38 +1,64 @@
+<!--Tool bar with Equifax Logo and Menu button if display (width < 800px) == true -->
+<mat-toolbar class="toolbar">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    <img src="/assets/logo_equifax.png" />
+</mat-toolbar>
 <!--Main container-->
-<mat-sidenav-container class="sidenav-container">
-
-    <!--Menu on the side-->
-    <mat-sidenav #drawer mode="side" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [opened]="(isHandset$ | async) === true">
-        <mat-toolbar>Menu</mat-toolbar>
-        <div>
-            <mat-nav-list>
-                <a mat-list-item color="warn" (click)="drawer.toggle()">Register</a>
-            </mat-nav-list>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <!--when logged int-->
+        <div *ngIf="userService.checkLoggedIn()">
+            <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+            <h4 class="name">{{userService.getUserFirstName()}}</h4>
+            <p class="designation">Software Engineer</p>
+            <mat-divider></mat-divider>
         </div>
+        <!--when logged out-->
+        <div *ngIf="!userService.checkLoggedIn()">
+            <a mat-button class="menu-button" routerLink="/login">
+                <mat-icon>login</mat-icon>
+                <span>Login</span>
+            </a>
+        </div>
+
+        <!-- still to figure out what should be included in this area -->
+        <a mat-button class="menu-button" routerLink="/product-detail">
+            <mat-icon>home</mat-icon>
+            <span>Product Details</span>
+        </a>
+        <button mat-button class="menu-button" routerLink="/">
+            <mat-icon>person</mat-icon>
+            <span>Products List</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>info</mat-icon>
+            <span>About</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button">
+            <mat-icon>help</mat-icon>
+            <span>Help</span>
+        </button>
+
+        <!--Logout button at the bottom-->
+        <button *ngIf="userService.checkLoggedIn()" mat-button class="menu-button" (click)="userService.logoutUser()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
     </mat-sidenav>
 
+    <!--main content/ current state of the application/ <router-outlet>-->
     <mat-sidenav-content>
-        <!--Tool bar with options-->
-        <mat-toolbar color="primary" class="toolbar">
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-                <mat-icon md-48 aria-label="Side nav toggle icon">menu</mat-icon>
-            </button>
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-                <mat-icon md-48 aria-label="Side nav toggle icon">home</mat-icon>
-            </button>
-            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-                <mat-icon md-48 aria-label="Side nav toggle icon">search</mat-icon>
-            </button>
-
-            <a routerLink="/login" *ngIf="!userService.checkLoggedIn()">Login</a>
-            <div *ngIf="userService.checkLoggedIn()">
-                <button mat-button [matMenuTriggerFor]="menu">Hello, {{userService.getUserFirstName()}}</button>
-                <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="userService.logoutUser()">Logout</button>
-                </mat-menu>
-            </div>
-        </mat-toolbar>
-        <!--Main content of the view... <router-outlet> -->
-        <ng-content></ng-content>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
     </mat-sidenav-content>
+
 </mat-sidenav-container>
