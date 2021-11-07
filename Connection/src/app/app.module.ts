@@ -55,6 +55,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ProductListComponent } from './component/product-list/product-list.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import { ProductListComponent } from './component/product-list/product-list.comp
     ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]
