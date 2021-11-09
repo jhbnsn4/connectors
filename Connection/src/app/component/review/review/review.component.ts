@@ -36,13 +36,14 @@ export class ReviewComponent implements OnInit {
    * Set up everything needed to display the review stars in HTML.
    */
   reviewStarsSetup() {
-    if (this.review?.stars) {
+    if (this.review) {
 
       // Store the number of stars as a floored integer value
       let starNum = Math.floor(this.review.stars);
 
       // Calculate how many stars out of five we are missing
       let numEmpty = Math.floor(5 - this.review.stars);
+      console.log("empty:", numEmpty);
       
       // Is our review a whole number? (is it the same even after being floored?)
       this.reviewIsWholeNumber = (this.review.stars) === starNum;
