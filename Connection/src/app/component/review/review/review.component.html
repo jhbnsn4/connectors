@@ -1,3 +1,8 @@
-<mat-card>
-    <mat-card-subtitle>ExampleName</mat-card-subtitle>
+<mat-card *ngIf="review">
+    <mat-card-subtitle>{{review.author.firstName}}</mat-card-subtitle>
+    <mat-card-subtitle>{{review.submitted}}</mat-card-subtitle>
+    <mat-card-content>
+        <p>stars: {{review.stars}}</p>
+        <p>{{review.text}}</p>
+    </mat-card-content>
 </mat-card>

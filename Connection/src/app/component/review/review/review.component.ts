@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { IReview } from 'src/app/model/review';
 import { UserService } from 'src/app/service/user.service';
 
@@ -9,7 +9,8 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class ReviewComponent implements OnInit {
 
-  review: IReview | undefined;
+  @Input()
+  review?: IReview;
 
   constructor() { }
 

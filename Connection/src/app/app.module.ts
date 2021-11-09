@@ -45,7 +45,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FeatureComponent } from './component/feature/feature.component';
 import { ProductComponent } from './component/product/product.component';
-import { ReviewComponent } from './component/review/review.component';
 import { UseCaseComponent } from './component/use-case/use-case.component';
 import { BenefitComponent } from './component/benefit/benefit.component';
 
@@ -59,6 +58,7 @@ import { ReviewDetailComponent } from './component/review-detail/review-detail.c
 import { LoginComponent } from './component/login/login.component';
 import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
+import { ReviewComponent } from './component/review/review/review.component';
 
 @NgModule({
   declarations: [
