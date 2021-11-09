@@ -60,9 +60,11 @@ import { ReviewDetailComponent } from './component/review-detail/review-detail.c
 import { LoginComponent } from './component/login/login.component';
 import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
+import { SearchpipePipe } from './searchpipe.pipe';
 
 @NgModule({
   declarations: [
+    SearchpipePipe,
     AppComponent,
     NavBarComponent,
     FeatureComponent,

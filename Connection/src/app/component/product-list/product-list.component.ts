@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
+  searchText: string ="";
     
     products = [
     { id: 11, name: 'Account Verification' },
