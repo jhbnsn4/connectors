@@ -14,11 +14,25 @@ export class ReviewFeedComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.fillExampleReviews();
+  }
+
+  /**
+   * Method to fill a list of reviews with hard-coded values for testing
+   */
+  fillExampleReviews() {
     // fill reviews with hard-coded data
     this.reviews.push({
       author: this.userService.getUsers()[0],
-      stars: 5,
+      stars: 3.5,
       text: "example review",
+      submitted: new Date()
+    });
+
+    this.reviews.push({
+      author: this.userService.getUsers()[1],
+      stars: 1,
+      text: "example review TWO",
       submitted: new Date()
     });
   }

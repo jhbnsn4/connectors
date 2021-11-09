@@ -1,8 +1,15 @@
+<!-- Review card -->
 <mat-card *ngIf="review">
-    <mat-card-subtitle>{{review.author.firstName}}</mat-card-subtitle>
-    <mat-card-subtitle>{{review.submitted}}</mat-card-subtitle>
+    <!-- Header info (name & date) -->
+    <mat-card-subtitle>{{review.author.firstName + " " + review.author.lastName}}</mat-card-subtitle>
+    <mat-card-subtitle>{{submittedDate}}</mat-card-subtitle>
     <mat-card-content>
-        <p>stars: {{review.stars}}</p>
+        <!-- Rating stars -->
+        <mat-icon *ngFor="let s of starsFilled" [title]="review.stars">star</mat-icon>
+        <mat-icon *ngIf="!reviewIsWholeNumber" [title]="review.stars">star_half</mat-icon>
+        <mat-icon *ngFor="let s of starsEmpty" [title]="review.stars">star_outline</mat-icon>
+
+        <!-- Review main content -->
         <p>{{review.text}}</p>
     </mat-card-content>
 </mat-card>

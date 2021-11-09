@@ -59,6 +59,7 @@ import { LoginComponent } from './component/login/login.component';
 import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { ReviewComponent } from './component/review/review/review.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -118,7 +119,7 @@ import { ReviewComponent } from './component/review/review/review.component';
     AppRoutingModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
