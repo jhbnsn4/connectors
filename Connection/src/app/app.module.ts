@@ -54,15 +54,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ProductListComponent } from './component/product-list/product-list.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { ReviewDetailComponent } from './component/review-detail/review-detail.component';
 import { LoginComponent } from './component/login/login.component';
 import { ReviewFeedComponent } from './component/review/review-feed/review-feed.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { ReviewComponent } from './component/review/review/review.component';
 import { DatePipe } from '@angular/common';
+import { SearchpipePipe } from './searchpipe.pipe';
 
 @NgModule({
   declarations: [
+    SearchpipePipe,
     AppComponent,
     NavBarComponent,
     FeatureComponent,
@@ -118,6 +121,7 @@ import { DatePipe } from '@angular/common';
     ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
+    OverlayModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
