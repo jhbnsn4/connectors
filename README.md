@@ -29,8 +29,8 @@ Test Account
 User must log in to a test account and then they will have access to the application's full functionality. Click on different APIs to see more detailed information and 'purchase' access.
 
 # Contributors
-* Ryan Moss
-* William Scully
-* John Benson
-* Eduardo Gonzalez
-* Kiennen Mason
+* Ryan Moss @fullxtilt
+* William Scully @sculleywr
+* John Benson @JDBensonwiu
+* Eduardo Gonzalez @eduar2gp
+* Kiennen Mason @kienen
