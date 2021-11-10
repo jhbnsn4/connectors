@@ -43,7 +43,6 @@ export class ReviewComponent implements OnInit {
 
       // Calculate how many stars out of five we are missing
       let numEmpty = Math.floor(5 - this.review.stars);
-      console.log("empty:", numEmpty);
       
       // Is our review a whole number? (is it the same even after being floored?)
       this.reviewIsWholeNumber = (this.review.stars) === starNum;
