@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { IReview } from 'src/app/model/review';
+import { ReviewService } from 'src/app/service/review.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class ReviewFeedComponent implements OnInit {
 
+  parentProductId: number = 0;
   reviews: IReview[] = [];
 
   reviewForm: FormGroup = new FormGroup({
@@ -20,34 +22,41 @@ export class ReviewFeedComponent implements OnInit {
   starArray: number[] = [0, 1, 2, 3, 4];
   savedStarRating: number = 5;
 
-  constructor(private userService: UserService) { }
+  constructor(private reviewService: ReviewService) { }
 
   ngOnInit(): void {
-    this.fillExampleReviews();
+    this.getReviews();
   }
 
   /**
-   * Method to fill a list of reviews with hard-coded values for testing
+   * Retrieve reviews for this product from our "database"
    */
-  fillExampleReviews() {
-    // fill reviews with hard-coded data
-    this.reviews.push({
-      author: this.userService.getUsers()[0],
-      stars: 3.5,
-      text: "example review",
-      submitted: new Date()
-    });
-
-    this.reviews.push({
-      author: this.userService.getUsers()[1],
-      stars: 1,
-      text: "example review TWO",
-      submitted: new Date()
-    });
+  getReviews() {
+    this.reviewService.getReviewsByProductId(this.parentProductId).subscribe(
+      (reviews) => { this.reviews = reviews; }
+    );
   }
 
   onReviewSubmit() {
     console.log("review submitted");
+
+    // Build a FormData object
+    const formData = new FormData();
+    formData.append('reviewText', this.reviewForm.get('reviewText')?.value);
+    formData.append('stars', this.savedStarRating.toString());
+    formData.append('submitted', new Date().toString());
+    let id: string | null = localStorage.getItem('authorId');
+    if (!id)
+      id = "0";
+    formData.append('authorId', id!);
+
+    // Send form to "database"
+    this.reviewService.postReviewForProduct(this.parentProductId, formData).subscribe(
+      (response) => {
+        // Update reviews
+        this.getReviews();
+      }
+    );
   }
 
   onStarClick(starIndex: number, event: MouseEvent) {
@@ -64,7 +73,7 @@ export class ReviewFeedComponent implements OnInit {
 
   onStarMouseOut() {
     // Subtract 1 because rating is 1-5 while the index is 0-4
-    this.setStarsFromRating(this.savedStarRating-1);
+    this.setStarsFromRating(this.savedStarRating - 1);
   }
 
   /**

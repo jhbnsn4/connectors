@@ -27,16 +27,19 @@ export class LoginComponent implements OnInit {
    * Attempts to log the user in.
    */
   onSubmit() {
-    // Send our information to the 'server' and attempt to log in
-    // TODO: use Observables to better simulate reality
+    // Send our information to the "server" and attempt to log in
     console.log("submited", this.loginForm.get("email")?.value, this.loginForm.get("password")?.value);
-    this.loginFailed = !this.userService.loginUser(
+    this.userService.loginUser(
       this.loginForm.get("email")?.value,
-      this.loginForm.get("password")?.value);
+      this.loginForm.get("password")?.value).subscribe(
+        (loginSucceeded) => {
+          this.loginFailed = !loginSucceeded;
 
-      // If we logged in, return to the main page
-      if (!this.loginFailed) {
-        this.router.navigate(['']);
-      }
+          // If we logged in, return to the main page
+          if (loginSucceeded) {
+            this.router.navigate(['']);
+          }
+        }
+      );
   }
 }

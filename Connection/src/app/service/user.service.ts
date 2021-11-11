@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { USERS } from '../model/mock-users';
 import { IUser } from '../model/user';
 
 @Injectable({
@@ -9,47 +11,39 @@ export class UserService {
 
   // Hard-coded list of users
   // TODO: Set this up to be received from an Observable to better simulate reality
-  private users: IUser[] = [
-    {
-      id: 1,
-      email: "test@gmail.com",
-      password: "P4ss", 
-      firstName: "John",
-      lastName: "Doe"
-    },
-    {
-      id: 2,
-      email: "a",
-      password: "P4ss", 
-      firstName: "UserA",
-      lastName: "UserA_LastName"
-    },
-
-  ];
 
   constructor(private router: Router) { }
 
   /**
    * @returns array of users registered in our system
    */
-  getUsers(): IUser[] {
-    return this.users;
+  getUsers(): Observable<IUser[]> {
+    const users = of(USERS);
+    return users;
+  }
+
+  getUserById(id: number): Observable<IUser> {
+    const user = of(USERS[id]);
+    return user;
   }
 
   /**
    * Attempts to log user in by checking their email & password against registered users
    * @returns (login_successful)
    */
-  loginUser(email:string, password: string): boolean {
-    for (let user of this.users) {
+  loginUser(email:string, password: string): Observable<boolean> {
+    
+    // Using the USERS mock array because normally this validation would be done in the middle/back-end
+    for (let user of USERS) {
       if (email === user.email && password === user.password) {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("userFirstName", user.firstName);
-        return true;
+        localStorage.setItem("userId", user.id.toString());
+        return of(true);
       }
 
     }
-    return false;
+    return of(false);
   }
   /**
    * Removes localStorage data about current user and navigates to index page
@@ -57,6 +51,7 @@ export class UserService {
   logoutUser() {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userFirstName");
+    localStorage.removeItem("userId");
     this.router.navigate(['']);
   }
 
