@@ -7,17 +7,25 @@
 
 .box-1 {
     flex: 1;
+    box-shadow: 5px 5px 15px 5px #dadce0b0;
+    border-radius: 7px;
+    margin: 5px;
+    padding: 5px;
 }
 
 .box-2 {
     flex: 2;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 5px 5px 15px 5px #dadce0b0;
+    border-radius: 7px;
 }
 
-.mobile {
-    max-width: max-content;
+.center {
+    justify-content: center;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1250px) {
     .flex {
         flex-direction: column;
     }
