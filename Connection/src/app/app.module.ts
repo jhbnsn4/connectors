@@ -41,6 +41,9 @@ import {MatTreeModule} from '@angular/material/tree';
 //Flex Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+//youtube
+import { YouTubePlayerModule } from "@angular/youtube-player";
+
 //custom components
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FeatureComponent } from './component/feature/feature.component';
@@ -123,7 +126,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     AppRoutingModule,
     FlexLayoutModule,
-    OverlayModule
+    OverlayModule,
+    YouTubePlayerModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
